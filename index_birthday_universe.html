@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Universe 🎀</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Poppins,sans-serif;
+background:linear-gradient(135deg,#ffd6e7,#ffeaf3,#fff);
+overflow-x:hidden;color:#5c4b56
+}
+.hero{
+min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+text-align:center;padding:20px
+}
+.glass{
+background:rgba(255,255,255,.55);
+backdrop-filter:blur(10px);
+border-radius:30px;
+padding:30px;
+box-shadow:0 8px 25px rgba(255,105,180,.15)
+}
+h1{font-family:Fredoka,sans-serif;color:#ff4f96;font-size:3rem}
+.btn{
+border:none;padding:14px 22px;border-radius:999px;
+background:#ff77ac;color:white;cursor:pointer;margin:8px;font-weight:600
+}
+.section{padding:40px 20px;max-width:1100px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{
+background:white;border-radius:24px;padding:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.06)
+}
+.photo{
+height:220px;border-radius:20px;overflow:hidden
+}
+.photo img{width:100%;height:100%;object-fit:cover}
+.hidden{display:none}
+#popup{
+position:fixed;inset:0;background:rgba(0,0,0,.45);
+display:none;justify-content:center;align-items:center;padding:20px;z-index:999
+}
+.popup-box{
+background:white;padding:25px;border-radius:24px;max-width:500px;text-align:center
+}
+.heart{
+position:fixed;top:-20px;animation:fall linear forwards
+}
+@keyframes fall{
+to{transform:translateY(110vh)}
+}
+textarea,input{
+width:100%;padding:12px;border-radius:12px;border:1px solid #ffd0e2;margin-top:10px
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<div class="glass">
+<h1>🎀 Happy Birthday Bestie 🎀</h1>
+<p style="margin:15px 0">Untuk teman RP paling spesial di semesta ini 💗</p>
+<button class="btn" onclick="document.getElementById('universe').scrollIntoView({behavior:'smooth'})">
+🎁 Open Birthday Universe
+</button>
+</div>
+</div>
+
+<div id="universe" class="section">
+
+<div class="card">
+<h2>💌 Birthday Letter</h2>
+<p>
+Haiii! Selamat ulang tahun yaa 🎂✨<br><br>
+Semoga tahun ini dipenuhi hal-hal baik, keberuntungan, kesehatan, dan banyak alasan untuk tersenyum.
+Terima kasih sudah menjadi teman RP yang seru, random, dan selalu memberi warna dalam cerita. 💗
+</p>
+</div>
+
+<br>
+
+<div class="grid">
+<div class="card">
+<h3>🎧 Soundtrack of You</h3>
+<p>Masukkan file lagu Best Friend milikmu.</p>
+<audio controls autoplay loop style="width:100%">
+<source src="bestfriend.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<div class="card">
+<h3>🎥 Secret Video</h3>
+<video controls width="100%">
+<source src="birthday-video.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+<h2 style="margin:30px 0">📸 Our Memories</h2>
+<div class="grid">
+<div class="photo"><img src="foto1.jpg"></div>
+<div class="photo"><img src="foto2.jpg"></div>
+<div class="photo"><img src="foto3.jpg"></div>
+<div class="photo"><img src="foto4.jpg"></div>
+<div class="photo"><img src="foto5.jpg"></div>
+<div class="photo"><img src="foto6.jpg"></div>
+<div class="photo"><img src="foto7.jpg"></div>
+<div class="photo"><img src="foto8.jpg"></div>
+</div>
+
+<br>
+
+<div class="grid">
+<div class="card">
+<h3>🎁 Random Wishes</h3>
+<p id="wish">Klik tombolnya!</p>
+<button class="btn" onclick="randomWish()">Wish Baru</button>
+</div>
+
+<div class="card">
+<h3>🏆 Birthday Achievement</h3>
+<ul>
+<li>+1 Tahun Lebih Keren ✨</li>
+<li>+999 Aura Main Character 👑</li>
+<li>+100 Keberuntungan 🍀</li>
+<li>+1000 Kebahagiaan 💖</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🌙 Secret Message</h3>
+<button class="btn" onclick="openSecret()">Jangan Klik</button>
+</div>
+
+<div class="card">
+<h3>💖 Emergency Happiness Button</h3>
+<button class="btn" onclick="happyBtn()">Press When Sad</button>
+</div>
+</div>
+
+<br>
+
+<div class="card">
+<h2>⏳ Friendship Countdown</h2>
+<p>Ganti tanggal di JavaScript sesuai tanggal kalian kenal.</p>
+<p id="days"></p>
+</div>
+
+<br>
+
+<div class="card">
+<h2>💬 Guestbook</h2>
+<input id="name" placeholder="Nama">
+<textarea id="msg" placeholder="Tulis pesan..."></textarea>
+<button class="btn" onclick="addMessage()">Kirim</button>
+<div id="guestbook"></div>
+</div>
+
+</div>
+
+<div id="popup">
+<div class="popup-box">
+<h2>💗 Secret Message 💗</h2>
+<p>
+Aku tahu kamu bakal pencet tombol ini 😭🎀<br><br>
+Semoga semua impianmu menemukan jalannya untuk menjadi nyata.
+Happy Birthday!
+</p>
+<button class="btn" onclick="closeSecret()">Tutup</button>
+</div>
+</div>
+
+<script>
+const wishes=[
+"Semoga saldo bertambah 💸",
+"Semoga tugas cepat selesai 📚",
+"Semoga bahagia selalu 💖",
+"Semoga impianmu tercapai ✨",
+"Semoga selalu dikelilingi orang baik 🌷"
+];
+
+function randomWish(){
+document.getElementById("wish").innerText=
+wishes[Math.floor(Math.random()*wishes.length)];
+}
+
+function openSecret(){
+document.getElementById("popup").style.display="flex";
+}
+
+function closeSecret(){
+document.getElementById("popup").style.display="none";
+}
+
+function happyBtn(){
+alert("Kamu hebat, kamu berharga, dan kamu dicintai 💗");
+}
+
+function addMessage(){
+let n=document.getElementById("name").value;
+let m=document.getElementById("msg").value;
+if(!n||!m)return;
+document.getElementById("guestbook").innerHTML+=
+`<div class="card" style="margin-top:10px"><b>${n}</b><br>${m}</div>`;
+}
+
+const startDate=new Date("2025-01-01");
+const now=new Date();
+const diff=Math.floor((now-startDate)/(1000*60*60*24));
+document.getElementById("days").innerText=
+"Kalian sudah berteman selama "+diff+" hari 🎀";
+
+function createHeart(){
+const h=document.createElement("div");
+h.className="heart";
+h.innerHTML=["💗","🎀","🌸","💕"][Math.floor(Math.random()*4)];
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(20+Math.random()*15)+"px";
+h.style.animationDuration=(3+Math.random()*4)+"s";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),7000);
+}
+setInterval(createHeart,350);
+</script>
+
+</body>
+</html>
